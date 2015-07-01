@@ -1,0 +1,63 @@
+SITE COM AULAS EM TÓPICOS: swcarpentry.github.io/shell-novice/
+
+-----Comandos no Shell (GIT Bash):
+
+CTRL+L = limpa a tela
+CTRL+R TRECHO_DO_COMANDO = Procura comandos passados relacionados ao trecho
+Tab no meio do comando = Mostra as opções
+help blablabla = Ajuda sobre o comando (OU blablabla --help)
+man blablabla (teoricamente mostra uma ajuda melhor, mas não prestou no Windows)
+
+pwd (mostra onde você está no momento, por default é a pasta mãe)
+ls (lista de conteúdo no local de origem. Por padrão interpreta como ls .)
+ls -F (lista de conteúdo no local de origem com barras que indicam quais são pastas)
+ls NOME_DA_PASTA (lista o conteúdo dentro da pasta que você está no momento)
+ls . (lista o conteúdo no local que você está)
+cd NOME_DA_PASTA (entra na pasta, agindo então a partir dela)
+cd .. (voltar, os 2 pontos são relativos à onde você tá)
+unzip (dezipar um arquivo zip)
+unrar (dezipar um arquivo rar)
+BLABLABLA.log (salva o que você digitou em texto)
+rm NOME_DO_BAGULHO (remover)
+history (histórico de comandos digitados)
+mv DADO DESTINO (mover dados de onde você está para o destino completo ou relativo)
+--EXEMPLO: mv potato.log C/Users/Gam/Desktop
+--OU: mv potato.log ../Desktop (se você já estava em uma pasta dentro do Gam, voltando assim rapidamente)
+mkdir NOME_DA_PASTA (criar pasta nova no local onde está)
+cp ARQUIVO ARQUIVO ARQUIVO DESTINO (copiar um ou vários arquivos da pasta atual para determinado destino)
+ls potato/*.txt (busca todos os arquivos na pasta potato terminados em .txt)
+wc (conta as palavras, linhas e caracteres)
+wc -l (conta apenas as linhas)
+COMANDO > ALGO.txt (o output vai para um arquivo, ao invés de aparecer na tela)
+cat ARQUIVO.txt (mostra o conteúdo de um arquivo na tela)
+sort (organizar em ordem alfabética)
+sort -n (organizar em ordem numérica ao invés de alfabética)
+head (mostra só a primeira linha)
+head -5 (mostra só as cinco primeiras linhas)
+tail -5 (mesmo esquema, de baixo pra cima)
+*[AB].txt (refere-se a todos os arquivos txt terminados em A OU B)
+find blabla (procura algo na pasta que você tá, incluindo dentro das pastas ali)
+find -maxdepth 1 (limita o número de pastas que ele vai se aprofundar enquanto procura)
+find -mindepth 1 (mesma coisa, ao contrário)
+-name blablabla (busca algo, dando o endereço total de cada arquivo)
+touch novo.txt (cria um bloco de notas novo)
+
+ssh-keygen (criar um servidor seguro)
+git clone (SSH do site git) (precisa adicionar uma chave ssh no settings do seu perfil) (depois de clonar, você deve entrar na pasta pra trabalhar nela)
+git status (vê o status do servidor)
+git add ARQUIVO (adiciona o arquivo à fase intermediária do servidor git)
+git commit -am 'texto texto' (comenta sua mudança) (se ele for pra uma tela esquisita, escreve :q! lá embaixo)
+git push (atualiza o servidor com suas modificações)(faça isso depois de mexer tudo)
+git pull (atualiza sua pasta com as modificações do servidor)(faça isso antes de mexer em qualquer coisa)
+git config --global user.email "EMAIL"
+git config --global user.name "NOME" (ambos importantes pra ele saber quem é você, e são necessariamente iguais ao login do site git hub)
+git stash (descarta sua mudança pra dar um pull legal)
+git log (mostra o histórico do projeto)
+git reset --hard CODIGO (reseta a parada pro ponto do código mostrado no git log)
+
+\python (vira um shell interativo de python)
+
+NO PYTHON:
+
+OBJETO.(+TAB) (mostra as utilidades deste objeto)
+
