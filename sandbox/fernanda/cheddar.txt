@@ -3,3 +3,4 @@ Olá Fernanda!Como você conseguiu criar uma pasta no nosso diretório do git hu
 Consegui Fernanda!!O erro era que eu não estava colocando nenhum arquivo na pasta, por isso não dava para publicá-la...
 
 Testando (panda)
+O meu tinha dado esse problema também. Que bom que conseguiu!
