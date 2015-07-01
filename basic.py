@@ -6,12 +6,8 @@
 #  vanessa testandoo
 #  Curso pyhton - "Analise de Dados Oceanografia - PPG UERJ"
 #  Ministrantes: Rafael Soutelino
-<<<<<<< HEAD
 
 #  Nível: Básico ao Avançado
-=======
-#  Nível: Básico 
->>>>>>> eeea2ca0f0e3533f1d1f8b8fb616f703e56796b9
 #  Data: 27/11/2014
 #  Local: UERJ, Rio de Janeiro 
 #################################################
@@ -28,11 +24,8 @@
 
 a = 1 #sim
 
-<<<<<<< HEAD
 b = 2   ##preferencialmente não
-=======
-b = 3.0   #preferencialmente não
->>>>>>> eeea2ca0f0e3533f1d1f8b8fb616f703e56796b9
+
 
 # Não usar letras como nome de variaveis. Use um nome auto explicativo
 # Não começar com numeros
