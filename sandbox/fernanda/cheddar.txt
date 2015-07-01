@@ -1,2 +1,3 @@
 batata com cheddar
 Olá Fernanda!Como você conseguiu criar uma pasta no nosso diretório do git hub e a tornou acessível para todos nós?Eu to tentando criar uma pasta para testar também, mas ela só aparece pra mim... eu dou git commit e git push mas não adianta...Você me explica como você fez por favor??Andre Korol aqui
+Consegui Fernanda!!O erro era que eu não estava colocando nenhum arquivo na pasta, por isso não dava para publicá-la...
