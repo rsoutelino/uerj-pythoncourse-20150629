@@ -245,7 +245,7 @@ from matplotlib import pyplot as plt
 
 import matplotlib.pyplot as plt
 
-from matplotlib.pyplot import 
+from matplotlib.pyplot import contourf
 
 from matplotlib import *
 
@@ -281,7 +281,8 @@ print "Minha lista de compras:"
 print "+" * n
 
 for compra in lista_de_compras:
-    print compra
+    print compra  
+
 print "+" * n
 
 # while loops
@@ -291,12 +292,14 @@ while b <= 5:
     print b
     b += 1
 
+
 # continue x break
 
 for compra in lista_de_compras:
     if compra == 'banana':
         continue
     print compra
+    
 
 for compra in lista_de_compras:
     if compra == 'alface':
@@ -310,10 +313,10 @@ for compra in lista_de_compras:
 def potencia():
     c = 2 ** 4
 
-
 def potencia(a, b):
     c = a ** b
     print c 
+    return c
 
 def potencia(a, b):
     print a ** b

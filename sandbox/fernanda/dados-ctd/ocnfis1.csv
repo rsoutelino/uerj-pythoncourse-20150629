@@ -1,0 +1,32 @@
+% Device;CC1314008
+% File name;CC1314008_20140115_104916
+% Cast time (UTC);2014-01-15 10:49:16
+% Cast time (local);2014-01-15 08:49:16
+% Sample type;Cast
+% Cast data;Processed
+% Location source;GPS
+% Default latitude;32
+% Default altitude;0
+% Start latitude;-22,9178148
+% Start longitude;-43,1372133
+% Start altitude;-3,0799999237060547
+% Start GPS horizontal error(Meter);1,7000000476837158
+% Start GPS vertical error(Meter);3,6500000953674316
+% Start GPS number of satellites;10
+% End latitude;
+% End longitude;
+% End altitude;
+% End GPS horizontal error(Meter);
+% End GPS vertical error(Meter);
+% End GPS number of satellites;
+% Cast duration (Seconds);69,4
+% Samples per second;5
+% Electronics calibration date;0001-01-01
+% Conductivity calibration date;2013-05-06
+% Temperature calibration date;2013-05-06
+% Pressure calibration date;2013-05-06
+% 
+Pressure (Decibar);Depth (Meter);Temperature (Celsius);Conductivity (MicroSiemens per Centimeter);Specific conductance (MicroSiemens per Centimeter);Salinity (Practical Salinity Scale);Sound velocity (Meters per Second);Density (Kilograms per Cubic Meter)
+0,15;0,1502585160541329;26,8068673687764;49542,5506129602;47814,655787139054;31,145567625755476;1534,5560685485145;1019,8809427847848
+0,44999999999999996;0,45075226260433671;26,620313160530269;49561,319774297859;48005,63648284223;31,284246147500898;1534,2755165124841;1020,0447981174065
+0,79389539987965385;0,79518245684665456;26,594864129630679;49555,628652788109;48023,799935087489;31,297316780559179;1534,2359788521235;1020,0640453455809
