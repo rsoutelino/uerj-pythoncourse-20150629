@@ -2,6 +2,7 @@
 import os, glob, argparse
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
 
 from funcoes import *
 
@@ -69,11 +70,31 @@ for filename in filelist:
     if "SED" in filename:
         filelist.remove(filename)
 
+lons, lats = [], []
+
 for filename in filelist:
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     print "Reading and plotting " + filename.split('/')[-1]
     estacao = Cast(filename)
     estacao.split_header_data()
+
+    if hasattr(estacao, 'lon'):
+        lons.append(estacao.lon)
+        lats.append(estacao.lat)
+
     plot_profiles(estacao.temp, estacao.salt, 
                   estacao.pres, filename, FIGDIR)
+
+
+plt.close('all')
+
+if lons:
+    print "Plotting map"
+    m = Basemap(resolution='h', projection='cyl', llcrnrlon=-43.3, llcrnrlat=-23.2, 
+                    urcrnrlon=-43, urcrnrlat=-22.5)
+    plt.figure()
+    m.fillcontinents()
+    m.drawcoastlines()
+    m.plot(lons, lats, 'ro')
+    plt.show()
 
