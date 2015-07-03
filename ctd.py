@@ -3,6 +3,7 @@ import os, glob, argparse
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
+from matplotlib.mlab import griddata
 
 from funcoes import *
 
@@ -61,6 +62,7 @@ class Cast(object):
 
 
 filelist = glob.glob( os.path.join(DATADIR, '*.%s' %(args.extension)) )
+filelist.sort()
 
 for filename in filelist:
     if "SED" in filename:
@@ -70,7 +72,7 @@ for filename in filelist:
     if "SED" in filename:
         filelist.remove(filename)
 
-lons, lats = [], []
+lons, lats, temp, prof = [], [], [], []
 
 for filename in filelist:
     # import pdb; pdb.set_trace()
@@ -81,6 +83,8 @@ for filename in filelist:
     if hasattr(estacao, 'lon'):
         lons.append(estacao.lon)
         lats.append(estacao.lat)
+        temp.append(estacao.temp)
+        prof.append(estacao.pres*-1)
 
     plot_profiles(estacao.temp, estacao.salt, 
                   estacao.pres, filename, FIGDIR)
@@ -97,4 +101,53 @@ if lons:
     m.drawcoastlines()
     m.plot(lons, lats, 'ro')
     plt.show()
+
+lat = []
+for k in range(len(temp)):
+    lat.append( temp[k]*0 + lats[k] )
+
+temparr, profarr, latarr = np.array([]), np.array([]), np.array([])
+for k in range(len(temp)):
+    temparr = np.hstack( ( temparr, temp[k]) )
+    profarr = np.hstack( ( profarr, prof[k]) )
+    latarr = np.hstack( ( latarr, lat[k]) )
+
+
+# criando a grade
+zi = np.linspace(profarr.min(), profarr.max(), 30)
+yi = np.linspace(latarr.min(), latarr.max(), 80)
+
+zg, yg = np.meshgrid(zi, yi)
+
+plt.scatter(latarr, profarr, s=20, c=temparr, edgecolor='none')
+plt.colorbar()
+plt.plot(yg.transpose(), zg.transpose(), 'k-', alpha=0.5)
+plt.plot(yg, zg, 'k-', alpha=0.5)
+
+plt.show()
+
+tempg = griddata(latarr, profarr, temparr, yg, zg, 'linear')
+bathy = []
+for k in range(len(temp)):
+    bathy.append(prof[k].min())
+
+
+# lats.sort()
+
+latfill = [latarr.min()]
+latfill.extend(lats)
+latfill.extend([latarr.max()])
+
+# bathy.sort()
+
+proffill = [profarr.min()]
+proffill.extend(bathy)
+proffill.extend([profarr.min()])
+
+plt.figure()
+plt.contourf(yg, zg, tempg, 40)
+# plt.plot(latfill, proffill, color='w')
+plt.scatter(latarr, profarr, s=20, c=temparr)
+plt.colorbar()
+plt.show()
 

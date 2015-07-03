@@ -22,11 +22,11 @@ def plot_profiles(temp, salt, pres, filename, savedir):
     plt.figure(figsize=(10,5))
     
     plt.subplot(121)
-    plt.plot(temp, -pres)
+    plt.plot(temp, -pres, color='#ef6548', linewidth=2)
     plt.title('Temperature')
 
     plt.subplot(122)
-    plt.plot(salt, -pres)
+    plt.plot(salt, -pres, color='#238b45', linewidth=2)
     plt.title('Salinity')
 
     if sys.platform == 'win32' or sys.platform == 'win64':
