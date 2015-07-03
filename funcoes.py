@@ -1,4 +1,4 @@
-import os
+import os, sys
 import matplotlib.pyplot as plt
 
 
@@ -11,7 +11,7 @@ def div(numerador=8, denominador=2):
     return numerador/denominador
 
 
-def plot_profiles(cond, temp, salt, pres, filename, savedir):
+def plot_profiles(temp, salt, pres, filename, savedir):
     """
     Escrever docstring
     INPUT: 
@@ -21,20 +21,19 @@ def plot_profiles(cond, temp, salt, pres, filename, savedir):
     """
     plt.figure(figsize=(10,5))
     
-    plt.subplot(131)
-    plt.plot(temp, -pres)
+    plt.subplot(121)
+    plt.plot(temp, -pres, color='#ef6548', linewidth=2)
     plt.title('Temperature')
 
-    plt.subplot(132)
-    plt.plot(salt, -pres)
+    plt.subplot(122)
+    plt.plot(salt, -pres, color='#238b45', linewidth=2)
     plt.title('Salinity')
-    plt.suptitle(filename.split('/')[-1])
 
-    plt.subplot(133)
-    plt.plot(cond, -pres)
-    plt.title('Conductivity')
+    if sys.platform == 'win32' or sys.platform == 'win64':
+        figname = filename.split('\\')[-1].split('.')[0] + '.png'
+    else:
+        figname = filename.split('/')[-1].split('.')[0] + '.png'
 
-    figname = filename.split('/')[-1].replace('txt', 'png')
     figname = os.path.join(savedir, figname)
     print "    --> saving png"
     plt.savefig(figname)
